@@ -168,8 +168,8 @@ function coreButtonsFor(userId) {
   const deepLink = `${FRONTEND_BASE}/?userId=${encodeURIComponent(userId)}&action=handle_start`;
   return [
     { text: "Dashboard", url: deepLink },
-    { text: "Deposit", url: `${FRONTEND_BASE}/deposit` },
-    { text: "Wallet", url: `${FRONTEND_BASE}/wallet` },
+    { text: "Deposit", url: `${FRONTEND_BASE}/` },
+    { text: "Wallet", url: `${FRONTEND_BASE}/` },
     { text: "Withdraw", url: `${FRONTEND_BASE}/withdraw` },
     { text: "Lotteries", url: `${FRONTEND_BASE}/` },
   ];
@@ -347,3 +347,4 @@ process.on("SIGINT", async () => {
 });
 
 console.log(`Telegram bot started (mode=${USE_WEBHOOK ? "webhook" : "polling"})`);
+
