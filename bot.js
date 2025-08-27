@@ -275,7 +275,9 @@ bot.on("message", (msg) => {
 
 // Scheduled reminders
 const TZ = process.env.REMINDER_TZ || undefined;
-const DAILY_CRON = process.env.REMINDER_CRON || "0 9 * * *";
+// const DAILY_CRON = process.env.REMINDER_CRON || "0 9 * * *";
+// default: every 6 hours at minute 0 (midnight, 06:00, 12:00, 18:00)
+const DAILY_CRON = process.env.REMINDER_CRON || "0 */6 * * *";
 
 function sendReminders() {
   const message = pickRandom(REMINDERS);
@@ -347,4 +349,5 @@ process.on("SIGINT", async () => {
 });
 
 console.log(`Telegram bot started (mode=${USE_WEBHOOK ? "webhook" : "polling"})`);
+
 
